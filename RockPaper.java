@@ -5,12 +5,18 @@
  */
 package com.mthree.practiceprogramming;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class RockPaper  {
     
     public static void main(String[] args) {
+        
         String answer="";
+        int user=0;
+        int comp=0;
+        int tie=0;
+        
         do{
         Scanner sc = new Scanner(System.in);
         System.out.println(" how many rounds you wants to play?");
@@ -25,7 +31,8 @@ public class RockPaper  {
                 System.out.println("What is your choice?");
             
                 String userMove = sc.nextLine();
-                int rand = (int)(Math.random()*3);
+                Random rng=new Random();
+                double rand = rng.nextDouble()*3;
                 String compMove = "";
                 if(rand == 0) {
                     compMove = "rock";
@@ -38,12 +45,16 @@ public class RockPaper  {
             
                 if(userMove==compMove) {
                     System.out.println("It's a tie!");
+                    tie++;
                 } else if((userMove=="rock" && compMove=="scissors") || (userMove=="scissors" && compMove=="paper")){
                     System.out.println("You won!");
+                    user++;
                 } else {
                     System.out.println("You lost!");
+                    comp++;
                 }
             }
+            System.out.println("Number of time you win= "+user + "\n number of time computer win: " +comp +"\n number of ties" + tie);
             System.out.println("would you like to play more?");
             answer=sc.nextLine();
         }
