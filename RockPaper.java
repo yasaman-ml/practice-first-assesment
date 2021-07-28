@@ -49,7 +49,7 @@ public class RockPaper  {
         }
             
         }while(answer == "yes");
-        
+        System.out.println("thanks for playnig");
             
             
          
