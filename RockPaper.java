@@ -46,7 +46,7 @@ public class RockPaper  {
                 if(userMove==compMove) {
                     System.out.println("It's a tie!");
                     tie++;
-                } else if((userMove.equals("rock") && compMove.equals("scissors")) || (userMove.equals("scissors") && compMove.equals("paper")){
+                } else if((userMove.equals("rock") && compMove.equals("scissors")) || (userMove.equals("scissors") && compMove.equals("paper"))){
                     System.out.println("You won!");
                     user++;
                 } else {
